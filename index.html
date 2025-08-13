@@ -81,6 +81,28 @@
       padding-top: 5px;
     }
     button { cursor: pointer; }
+
+    /* 📱 Responsive pour mobile */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+      }
+      form {
+        width: 100%;
+      }
+      .receipt {
+        width: 100% !important;
+        max-width: 100%;
+      }
+      .line {
+        font-size: 12px;
+      }
+      .title {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -267,7 +289,6 @@
     updateReceipt();
   });
 
-  // Patch hauteur par défaut 550px
   (function enforceDefaultReceiptHeight() {
     const heightInput = document.getElementById("receiptHeight");
     if (heightInput && (!heightInput.value || heightInput.value.trim().toLowerCase() === 'auto')) {
